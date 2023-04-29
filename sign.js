@@ -1,3 +1,15 @@
+const passwordInput = document.getElementById('password');
+const showPasswordCheckbox = document.getElementById('show-password');
+
+showPasswordCheckbox.addEventListener('change', function () {
+  if (showPasswordCheckbox.checked) {
+    passwordInput.type = 'text';
+  } else {
+    passwordInput.type = 'password';
+  }
+});
+
+
 // Open a connection to the database
 const db = openDatabase('lms', '1.0', 'My Database', 2 * 1024 * 1024);
 
