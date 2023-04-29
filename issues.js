@@ -19,6 +19,13 @@ function addIssue(event) {
     alert('Please fill in all fields and enter a valid serial number.');
     return;
   }
+  // Check if issue date is after the current date
+  const currentDate = new Date();
+  const issueDate = new Date(idate);
+  if (issueDate < currentDate) {
+    alert('Issue date cannot be before the current date.');
+    return;
+  }
 
   db.transaction(function (tx) {
     // Check if book already exists in issues table
