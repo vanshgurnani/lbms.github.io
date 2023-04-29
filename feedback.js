@@ -33,7 +33,7 @@ function addFeedback(event) {
       } else {
         // Add contact to database
         db.transaction(function (tx) {
-          tx.executeSql('INSERT INTO feedback (name,email) VALUES (?, ?, )', [name, email], function () {
+          tx.executeSql('INSERT INTO feedback (name,email) VALUES (?, ?)', [name, email], function () {
             alert('Feedback added successfully!');
             document.getElementById('feedbackform').reset();
             getFeedback();
