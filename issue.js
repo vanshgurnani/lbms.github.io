@@ -103,3 +103,13 @@ function deleteIssue(id) {
 // Display the initial list of issues
 getIssues();
 
+function logout() {
+  // Clear session data
+  sessionStorage.clear();
+
+  alert("Logged out!");
+
+  // Redirect to login page
+  window.location.href = "index.html";
+}
+

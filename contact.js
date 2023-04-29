@@ -113,3 +113,14 @@ function deleteContact(id) {
 // Display the initial list of contact
 getContact();
 
+
+function logout() {
+  // Clear session data
+  sessionStorage.clear();
+
+  alert("Logged out!");
+
+  // Redirect to login page
+  window.location.href = "index.html";
+}
+
