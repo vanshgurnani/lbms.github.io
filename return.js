@@ -99,7 +99,15 @@ function logout() {
   // Clear session data
   sessionStorage.clear();
 
+  
   alert("Logged out!");
+
+  // Delete all data from the contact table
+  db.transaction(function (tx) {
+    tx.executeSql('DELETE FROM return', [], function () {
+      console.log('All return data deleted!');
+    });
+  });
 
   // Redirect to login page
   window.location.href = "index.html";
