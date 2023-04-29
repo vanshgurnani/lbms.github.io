@@ -22,8 +22,8 @@ function addIssue(event) {
   // Check if issue date is after the current date
   const currentDate = new Date();
   const issueDate = new Date(idate);
-  if (issueDate < currentDate) {
-    alert('Issue date cannot be before the current date.');
+  if (issueDate < currentDate || issueDate > currentDate) {
+    alert('Issue date cannot be before or after the current date.');
     return;
   }
 

@@ -21,6 +21,13 @@ function addReturn(event) {
     return;
   }
 
+  const currentDate = new Date();
+  const returnDate = new Date(rdate);
+  if (returnDate < currentDate || returnDate > currentDate) {
+    alert('Return date cannot be before or after the current date.');
+    return;
+  }
+
   db.transaction(function (tx) {
     tx.executeSql('INSERT INTO return (rdate, bname, sno) VALUES (?, ?, ?)', [rdate, bname, sno], function () {
       alert('Return added successfully!');
