@@ -31,7 +31,7 @@ function login(event) {
     tx.executeSql('SELECT * FROM user WHERE email = ? AND password = ?', [email, password], function (tx, results) {
       if (results.rows.length > 0) {
         // Redirect to the issue.html page
-        window.location.href = "issue.html";
+        window.location.href = "home.html";
       } else {
         alert('Invalid email address or password.');
       }

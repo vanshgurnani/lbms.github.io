@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+<!-- <script src="index.js" charset="utf-8"></script> -->
+</head>
+<body>
+<!-- <body onload="alert('hello')" -->
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark ms-">
+    <div class="container-fluid">
+      <a class="navbar-link" href=""><img src="css/sk.webp" alt="" height="34"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">Book Store</a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="issue.html" class="nav-link">Issue</a></li>
+          <li class="nav-item"><a href="return.html" class="nav-link">Return</a></li>
+          <li class="nav-item"><a href="Member.html" class="nav-link">Membership</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="feedback.html" class="nav-link">Feedback</a></li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link btn btn-danger" style="color: white; font-size: 18px; font-weight: bold;" onclick="logout()">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- ROW COLUMN CONCEPT
+  <div class="row">
+    <div class="col-6" style="background-color:green; border:100px solid">hello</div>
+    <div class="col-6" style="background-color:red; border:100px solid">world</div>
+  </div> -->
+  <section id="title">
+    <div class="row container-fluid">
+      <div class="col-lg-6">
+        <h1 class="heading">Come and Buy these awesome electricals products!</h1>
+        <button class="btn btn-dark buy-button"><i class="bi bi-bag"></i> BUY ME! </button>
+        <button class="btn btn-outline-dark contact-button"><i class="bi bi-telephone"></i> CONTACT ME! </button>
+      </div>
+    <div class="col-lg-6">
+    <img src="css/sk1.jpg" alt="" height="200" class="rounded">
+    <img src="css/sk2.jpg" alt="" height="200" width="200" class="rounded" class="pic">
+    </div>
+    </div>
+  </section>
+  <section id="title2">
+    
+    <div class="row container-fluid">
+    <div class="col-lg-4">
+      <img src="css/check.png" height="100" class="icon" alt="">
+    <h2 class="i">Easy to use</h2>
+    <p class="i1">straight forward and simple to use</p>
+    </div>
+    <div class="col-lg-4">
+      <img src="css/b1.png" height="100" class="icon" alt="">
+      <h2 class="i">Guaranteed work conditions</h2>
+      <p class="i2">Materials provided here would be in good conditions and if found faulty will also been repaired in 1 year warnteed</p>
+      </div>
+      <div class="col-lg-4">
+        <img src="css/relation3.jpg" height="100" class="icon" alt="">
+        <h2 class="i">Good relation</h2>
+        <p class="i3">Maintain good relation with customer and first priority is what customer wants</p>
+        </div>
+
+    </div>
+  </section>
+
+  <section id="test">
+    <br>
+    <div class="row container-fluid">
+    <h2 class="t1">Testmonials</h2>
+    <div class="col-lg-4">
+    <img src="css/c1.png" height="100" class="t2" alt="">
+    <h3 class="t3">Ram</h3>
+    <p>Best electricals items in Jaipur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos excepturi obcaecati consequatur velit voluptatum deleniti fugiat ut soluta doloribus! Distinctio dolor nam quia at architecto quidem possimus pariatur magni eos.</p>
+    </div>
+    <div class="col-lg-4">
+    <img src="css/c1.png" height="100" class="t2" alt="">
+    <h3 class="t3">shyam</h3>
+    <p>Good Quality of Material provided here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dicta similique, architecto <br> ad totam molestiae repellat est quam ullam explicabo, asperiores cumque <br> a beatae voluptates quaerat corrupti saepe nostrum enim.</p>
+    </div>
+    <div class="col-lg-4">
+    <img src="css/c1.png" height="100" class="t2" alt="">
+    <h3 class="t3">Pintu</h3>
+    <p>Fantastic desgin also available here for electric <br> items and more advance lights & Fans are also provided here</p>
+    </div>
+    </div>
+  </section>
+
+  <!-- SLIDE SHOW  -->
+  <SECTION ID="testo">
+    <br>
+  <h2 class="t1">Testmonials</h2>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" interval="2000" >
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="active" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="active" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="css/c1.png" height="100" class="t2" alt="">
+    <h3 class="t3">Ram</h3>
+    <p>Best electricals items in Jaipur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur itaque ipsam laboriosam nulla,<br> eaque quis sequi ipsum dolorum aliquam deleniti delectus voluptatum <br> dolores voluptatem repellat iusto id sed velit suscipit.</p>
+      </div>
+      <div class="carousel-item">
+        <img src="css/c1.png" height="100" class="t2" alt="">
+    <h3 class="t3">shyam</h3>
+    <p>Good Quality of Material provided here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dicta similique, architecto <br> ad totam molestiae repellat est quam ullam explicabo, asperiores cumque <br> a beatae voluptates quaerat corrupti saepe nostrum enim.</p>
+      </div>
+      <div class="carousel-item">
+        <img src="css/c1.png" height="100" class="t2" alt="">
+    <h3 class="t3">Pintu</h3>
+    <p>Fantastic desgin also available here for electric <br> items and more advance lights & Fans are also provided here</p>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  </SECTION>
+
+  <!-- pricing card  -->
+
+  <!-- <section>
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+  </section> -->
+
+  <footer id="footer">
+    <i class="bi bi-facebook"></i>
+    <i class="bi bi-whatsapp"></i>
+    <i class="bi bi-envelope"></i>
+    <i class="bi bi-instagram"></i>
+    <p class="copyright">© Copyright 2018 S.k. Electricals</p>
+  </footer>
+
+
+
+</body>
+</html>
