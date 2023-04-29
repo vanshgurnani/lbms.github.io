@@ -29,7 +29,7 @@ function addIssue(event) {
       }
 
       // If book does not exist, insert new record
-      tx.executeSql('INSERT INTO issues (idate, rdate, bname, sno) VALUES (?, ?, ?, ?)', [idate, rdate, bname, sno], function () {
+      tx.executeSql('INSERT INTO issues (idate, bname, sno) VALUES (?, ?, ?)', [idate, bname, sno], function () {
         alert('Issue added successfully!');
         document.getElementById('issueform').reset();
         getIssues();
