@@ -31,11 +31,21 @@ function addReturn(event) {
     return;
   }
 
+
+
   db.transaction(function (tx) {
-    tx.executeSql('INSERT INTO return (rdate, bname, sno) VALUES (?, ?, ?)', [rdate, bname, sno], function () {
-      alert('Return added successfully!');
-      document.getElementById('returnform').reset();
-      getReturn();
+
+    tx.executeSql('SELECT * FROM return WHERE bname = ?', [bname], function (tx, results){
+      if (results.rows.length > 0) {
+        alert('Book is already returned.');
+        return;
+      }
+
+      tx.executeSql('INSERT INTO return (rdate, bname, sno) VALUES (?, ?, ?)', [rdate, bname, sno], function () {
+        alert('Return added successfully!');
+        document.getElementById('returnform').reset();
+        getReturn();
+      });
     });
   });
 }
