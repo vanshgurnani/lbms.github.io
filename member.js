@@ -121,21 +121,22 @@ function deleteMember(id) {
 // Display the initial list of members
 getMembers();
 
-
 function logout() {
   // Clear session data
   sessionStorage.clear();
 
-  
   alert("Logged out!");
 
-  // Delete all data from the contact table
+  // Drop all tables from the database
   db.transaction(function (tx) {
-    tx.executeSql('DELETE FROM members', [], function () {
-      console.log('All members data deleted!');
-    });
+    tx.executeSql('DROP TABLE IF EXISTS issues');
+    tx.executeSql('DROP TABLE IF EXISTS return');
+    tx.executeSql('DROP TABLE IF EXISTS feeds');
+    tx.executeSql('DROP TABLE IF EXISTS contact');
+    tx.executeSql('DROP TABLE IF EXISTS members');
   });
 
   // Redirect to login page
   window.location.href = "index.html";
 }
+

@@ -22,10 +22,17 @@ function addIssue(event) {
   // Check if issue date is after the current date
   const currentDate = new Date();
   const issueDate = new Date(idate);
-  if (issueDate < currentDate || issueDate > currentDate) {
-    alert('Issue date cannot be before or after the current date.');
+  if (issueDate < currentDate && issueDate.toDateString() !== currentDate.toDateString()) {
+    alert('Issue date cannot be before the current date.');
+    return;
+  } else if (issueDate > currentDate && issueDate.toDateString() !== currentDate.toDateString()) {
+    alert('Issue date cannot be in the future.');
     return;
   }
+  
+
+
+  
 
   db.transaction(function (tx) {
     // Check if book already exists in issues table
@@ -43,9 +50,8 @@ function addIssue(event) {
       });
     });
   });
+
 }
-
-
 // Function to retrieve the issues from the database and populate the table
 function getIssues() {
   db.transaction(function (tx) {
@@ -114,17 +120,19 @@ function logout() {
   // Clear session data
   sessionStorage.clear();
 
-  
   alert("Logged out!");
 
-  // Delete all data from the contact table
+  // Drop all tables from the database
   db.transaction(function (tx) {
-    tx.executeSql('DELETE FROM issues', [], function () {
-      console.log('All issues data deleted!');
-    });
+    tx.executeSql('DROP TABLE IF EXISTS issues');
+    tx.executeSql('DROP TABLE IF EXISTS return');
+    tx.executeSql('DROP TABLE IF EXISTS feeds');
+    tx.executeSql('DROP TABLE IF EXISTS contact');
+    tx.executeSql('DROP TABLE IF EXISTS members');
   });
 
   // Redirect to login page
   window.location.href = "index.html";
 }
+
 

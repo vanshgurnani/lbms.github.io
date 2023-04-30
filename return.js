@@ -23,8 +23,11 @@ function addReturn(event) {
 
   const currentDate = new Date();
   const returnDate = new Date(rdate);
-  if (returnDate < currentDate || returnDate > currentDate) {
-    alert('Return date cannot be before or after the current date.');
+  if (returnDate < currentDate && returnDate.toDateString() !== currentDate.toDateString()) {
+    alert('Return date cannot be before the current date.');
+    return;
+  } else if (returnDate > currentDate && returnDate.toDateString() !== currentDate.toDateString()) {
+    alert('Return date cannot be in the future.');
     return;
   }
 
@@ -106,14 +109,15 @@ function logout() {
   // Clear session data
   sessionStorage.clear();
 
-  
   alert("Logged out!");
 
-  // Delete all data from the contact table
+  // Drop all tables from the database
   db.transaction(function (tx) {
-    tx.executeSql('DELETE FROM return', [], function () {
-      console.log('All return data deleted!');
-    });
+    tx.executeSql('DROP TABLE IF EXISTS issues');
+    tx.executeSql('DROP TABLE IF EXISTS return');
+    tx.executeSql('DROP TABLE IF EXISTS feeds');
+    tx.executeSql('DROP TABLE IF EXISTS contact');
+    tx.executeSql('DROP TABLE IF EXISTS members');
   });
 
   // Redirect to login page
