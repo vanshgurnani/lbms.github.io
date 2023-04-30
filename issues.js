@@ -135,4 +135,39 @@ function logout() {
   window.location.href = "index.html";
 }
 
+const searchButton = document.getElementById('search-button');
+searchButton.addEventListener('click', search);
+
+
+function search() {
+  const searchInput = document.getElementById('search-input').value.toLowerCase();
+
+  db.transaction(function (tx) {
+    tx.executeSql('SELECT * FROM issues', [], function (tx, results) {
+      let bookFound = false;
+      
+      // Check each issue for a match with the search query
+      for (let i = 0; i < results.rows.length; i++) {
+        const issue = results.rows.item(i);
+        
+        // Check if book name matches the search query
+        if (issue.bname.toLowerCase().indexOf(searchInput) !== -1) {
+          bookFound = true;
+          
+          // Display an alert with the book name and exit the loop
+          alert(`Book found: ${issue.bname}`);
+          break;
+        }
+      }
+
+      // If no match was found, display a message to the user
+      if (!bookFound) {
+        alert(`No books found with name '${searchInput}'`);
+      }
+    });
+  });
+}
+
+
+
 
