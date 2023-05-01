@@ -1,3 +1,11 @@
+const hostname = window.location.hostname;
+const port = window.location.port;
+
+console.log(`Hostname: ${hostname}`);
+console.log(`Port: ${port}`);
+
+
+
 const passwordInput = document.getElementById('password');
 const showPasswordCheckbox = document.getElementById('show-password');
 
